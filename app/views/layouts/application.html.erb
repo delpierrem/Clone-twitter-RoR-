@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%=  full_title(yield(:title)) %> </title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+
+        <nav>
+          <ul class="nav navbar-nav">
+            <li><%= link_to "Accueil", root_path%></li>
+            <li><%= link_to "Services", pages_services_path%></li>
+            <li><%= link_to "Team", pages_team_path%> </li>
+            <li><%= link_to "Contact",pages_contact_path%> </li>
+          </ul>
+        </nav>
+      </div>
+
+      </header>
+    <section class="container">
+      <%= yield %>
+    </section>
+    <footer>
+      <p>&copy; michelDelpierre 2018-2019 tous droits réservés</p>
+    </footer>
+  </body>
+</html>
