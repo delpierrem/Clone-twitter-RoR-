@@ -3,7 +3,7 @@ require 'test_helper'
 class PagesControllerTest < ActionDispatch::IntegrationTest
 
   def setup
-    @baseTitle = "RoR"
+    @baseTitle = "Ruby on Rails"
   end
 
   test "should get accueil" do
