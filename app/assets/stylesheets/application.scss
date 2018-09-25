@@ -25,6 +25,7 @@ p{
 }
 // footer
 footer p {
+  padding-top: 40px;
   text-align: center;
 }
 .small-logo{
@@ -54,4 +55,17 @@ aside {
 .gravatar{
   float: left;
   margin-right: 10px;
+}
+
+// formulaire
+input{
+  border: 1px solid rgb(182,182,182);
+  width: 100%;
+  margin-bottom: 15px;
+  @include box-sizing;
+}
+
+.registrer-title{
+  text-align: center;
+  padding-bottom: 20px;
 }
