@@ -12,6 +12,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       #Sauvegarde confirmé <- true
+      flash[:success] = "Bienvenue sur le clone de twitter"
+      redirect_to @user
     else
       render "new"
     end
