@@ -15,6 +15,10 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    log_out
+    # flash.now[:danger] = "Email ou mot de passe invalide !"
+    redirect_to root_path
+
   end
 
 end
