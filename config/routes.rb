@@ -4,12 +4,12 @@ Rails.application.routes.draw do
   get 'pages/contact'
   get 'pages/team'
   get 'pages/services'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  # connection / deconnection
+  get "/signup", to: "users#new"
+  get "/login", to: "sessions#new"
+  post "/login", to: "sessions#create"
+  delete "/logout", to: "sessions#destroy"
 
-  get "/login", to "sessions#new"
-  post "/login", to "sessions#create"
-  delete "/logout", to "sessions#destroy"
-
+  # all resources
   resources :users
-
 end
