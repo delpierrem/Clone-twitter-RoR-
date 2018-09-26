@@ -8,8 +8,6 @@
   box-sizing: border-box;
 }
 
-
-
 .logo{
   width: 25px;
   height: auto;
@@ -27,6 +25,7 @@ p{
 }
 // footer
 footer p {
+  padding-top: 40px;
   text-align: center;
 }
 .small-logo{
@@ -41,4 +40,37 @@ footer p {
   width: 60%;
   margin-top: 45px;
   @include box-sizing;
+}
+
+//sidebar
+aside {
+  section{
+    padding: 10px 0;
+    h1{
+      font-size: 140%;
+    }
+  }
+}
+
+.gravatar{
+  float: left;
+  margin-right: 10px;
+}
+
+// formulaire
+input{
+  border: 1px solid rgb(182,182,182);
+  width: 100%;
+  margin-bottom: 15px;
+  @include box-sizing;
+}
+
+.registrer-title{
+  text-align: center;
+  padding-bottom: 20px;
+}
+.list-form{
+  color: crimson;
+  margin-bottom: 30px;
+  font-weight: 600;
 }
