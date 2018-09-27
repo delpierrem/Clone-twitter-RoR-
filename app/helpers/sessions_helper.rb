@@ -20,6 +20,10 @@ module SessionsHelper
     !current_user.nil?
   end
 
+  def current_user?(user)
+    user == current_user
+  end
+
   def remember(user)
     user.remember
     cookies.permanent.signed[:user_id] = user_id
@@ -39,9 +43,9 @@ module SessionsHelper
   end
 
   def User.digest(string)
-  cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
-                                                BCrypt::Engine.cost
-  BCrypt::Password.create(string, cost: cost)
-end
+    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
+    BCrypt::Engine.cost
+    BCrypt::Password.create(string, cost: cost)
+  end
 
 end
