@@ -22,7 +22,7 @@ module SessionsHelper
 
   def remember(user)
     user.remember
-    cookies.permanent_signed[:user_id] = user_id
+    cookies.permanent.signed[:user_id] = user_id
     cookies.permanent[:remember_token] = user.remember_token
   end
 
@@ -34,8 +34,14 @@ module SessionsHelper
 
   def forget(user)
     user.forget
-    cookies.delete(user_id)
-    cookies.delete(remember_token)
+    cookies.delete(:user_id)
+    cookies.delete(:remember_token)
   end
+
+  def User.digest(string)
+  cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
+                                                BCrypt::Engine.cost
+  BCrypt::Password.create(string, cost: cost)
+end
 
 end
